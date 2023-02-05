@@ -10,6 +10,7 @@
 typedef int RC;
 
 #define RC_OK 0
+#define RC_ERROR -1
 #define RC_FILE_NOT_FOUND 1
 #define RC_FILE_HANDLE_NOT_INIT 2
 #define RC_WRITE_FAILED 3

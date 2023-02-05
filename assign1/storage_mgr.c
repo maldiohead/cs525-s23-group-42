@@ -126,9 +126,9 @@ RC readBlock (int pageNum, SM_FileHandle *fHandle, SM_PageHandle memPage) {
             ret = RC_READ_NON_EXISTING_PAGE;
             break;
         }
-
-        fseek(fp, pageNum * PAGE_SIZE * sizeof(char), SEEK_SET);
-        fread(memPage, 1, PAGE_SIZE, fp);
+        FILE *currentFP = (FILE *)fHandle->mgmtInfo;
+        fseek(currentFP, pageNum * PAGE_SIZE * sizeof(char), SEEK_SET);
+        fread(memPage, 1, PAGE_SIZE, currentFP);
         fHandle->curPagePos = pageNum;
         RC_message = "read block is success.";
     } while (0);
@@ -227,16 +227,16 @@ RC writeCurrentBlock (SM_FileHandle *fHandle, SM_PageHandle memPage) {
             ret = RC_WRITE_FAILED;
             break;
         }
-
+        FILE *currentFP = (FILE *)fHandle->mgmtInfo;
         int currentPosi = fHandle->curPagePos * PAGE_SIZE;
-        fseek(fp, currentPosi, SEEK_SET);
+        fseek(currentFP, currentPosi, SEEK_SET);
         int memPageSize = strlen(memPage) + 1;
         int writeSize = memPageSize < PAGE_SIZE ? memPageSize : PAGE_SIZE;
-        fwrite(memPage, 1,writeSize, fp);
+        fwrite(memPage, 1,writeSize, currentFP);
     } while (0);
 
     RC_message = "Write current block Successfully";
-    return RC_OK;
+    return ret;
 }
 
 RC appendEmptyBlock (SM_FileHandle *fHandle) {

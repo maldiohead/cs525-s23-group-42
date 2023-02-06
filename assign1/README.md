@@ -13,9 +13,9 @@ assign1
       README.md
 
 ## Member:
-   Liming Liu
-   Weibo Wang
-   Dongjing Xie
+-   Liming Liu
+-   Weibo Wang
+-   Dongjing Xie
       
 ## Run This Program:
 
@@ -23,9 +23,9 @@ assign1
    The project requires linux and gcc compilation environment. \ 
    
 ### 2. Run Step 
-   1、make clean
-   2、make
-   3、make run
+   >> make clean
+   >> make
+   >> make run (or exectute ./test_assign1_1 directly)
    
 ## The Core Function implement (in the storage_mgr.c file):
 ### createPageFile

@@ -20,12 +20,13 @@ assign1
 ## Run This Program:
 
 ### 1. Environment
-   The project requires linux and gcc compilation environment. \ 
+   The project requires linux and gcc compilation environment.
    
 ### 2. Run Step 
-- make clean
-  make
-  make run (or exectute ./test_assign1_1 directly)
+step
+-     make clean
+-     make
+-     make run (or exectute ./test_assign1_1 directly)
    
 ## The Core Function implement (in the storage_mgr.c file):
 ### createPageFile

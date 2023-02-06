@@ -23,10 +23,9 @@ assign1
    The project requires linux and gcc compilation environment.
    
 ### 2. Run Step 
-step
 -     make clean
--     make
--     make run (or exectute ./test_assign1_1 directly)
+      make
+      make run (or exectute ./test_assign1_1 directly)
    
 ## The Core Function implement (in the storage_mgr.c file):
 ### createPageFile

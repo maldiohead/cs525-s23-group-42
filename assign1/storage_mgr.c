@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-FILE *fp;
+static FILE *fp;
 
 void initStorageManager (void) {
     RC_message = "storage manager init success.";
@@ -135,7 +135,7 @@ RC readBlock (int pageNum, SM_FileHandle *fHandle, SM_PageHandle memPage) {
     return ret;
 }
 
-int getBlockPos (SM_FileHandle *fHandle) {
+int getBlockPos(SM_FileHandle *fHandle) {
     if (preChechReadBlockParam(fHandle) != RC_OK) {
         RC_message = "file handler is not init";
         return RC_ERROR;

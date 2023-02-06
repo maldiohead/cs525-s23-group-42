@@ -27,7 +27,7 @@ assign1
       make
       make run (or exectute ./test_assign1_1 directly)
    
-## The Core Function implement (in the storage_mgr.c file):
+## The Key Function implement (in the storage_mgr.c file):
 ### createPageFile
 - Create a file with the given name and set the initial file size to PAGE_SIZE.
 ### openPageFile
